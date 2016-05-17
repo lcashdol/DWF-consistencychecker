@@ -64,7 +64,7 @@ def test_assigner(assigner, valid_assigners):
     if assigner in valid_assigners:
         # If we're in the valid assigners directly, we're done
         return True
-    for valid in valid_assigner:
+    for valid in valid_assigners:
         if valid.startswith('@') and assigner.endswith(valid):
             # This was an authorized assigner domain (@example.com)
             return True
@@ -89,8 +89,8 @@ def test_line(registry, line):
         found_error = True
         return
 
-    if split_id[0] not in ['DWF']:
-        print 'ID not DWF: %s' % dwfid
+    if split_id[0] not in ['DWF', 'CVE']:
+        print 'ID not DWF or CVE: %s' % dwfid
         found_error = True
         return
 
