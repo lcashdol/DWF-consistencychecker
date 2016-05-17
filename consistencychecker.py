@@ -75,7 +75,7 @@ def test_line(registry, line):
     global found_error
     global seen_ids
 
-    dwfid = line['DWF_ID']
+    dwfid = line['CVE_ID']
 
     # Some syntax checks on DWF IDs
     if dwfid in seen_ids:
